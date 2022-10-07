@@ -10,12 +10,11 @@ export class ControllerHome {
 
             let bll = new Business();
             let date = `${format(new Date(), 'yyyy-MM-dd HH:mm:ss')}`
-            let result = bll.Get(req.body.User);
 
             let api = {
                 id:uui(),
-                dtCriação:date,
-                body:req.body.User,  
+                dtConsulta:date,
+                body:req.body,  
                 mensagem:result, 
                 status:200
             }

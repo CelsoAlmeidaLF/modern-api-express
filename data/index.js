@@ -4,27 +4,27 @@ const {open} = require('sqlite');
 
 exports.Data = class {
 
-   Open(){
+   open(){
         return open({
             filename: './data/database.db',
             driver: sqlite3.Database
         });
     }
 
-    GetAll(sql){
-        return this.Open().then(db => {
-            return db.all(sql).then();
+    getall(sql, params){
+        return this.open().then(db => {
+            return db.all(sql, params).then();
         });
     }
 
-    RunCommand(sql){
-        this.Open().then(db => {
-            db.run(sql);
+    run(sql, params){
+        this.open().then(db => {
+            db.run(sql, params);
         });
     }
 
-    ExecCommand(sql){
-        this.Open().then(db => {
+    exec(sql){
+        this.open().then(db => {
             db.exec(sql);
         });
     }
