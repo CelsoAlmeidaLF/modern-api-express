@@ -10,7 +10,7 @@
     "dev":"cls&&nodemon ./bin",
     "start":"cls&&node ./bin"
   },
-  "author": "Systekna <celso.almeida.leite@hotmail.com>",
+  "author": "Almeida <https://github.com/CelsoAlmeidaLF>",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.20"
