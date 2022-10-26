@@ -1,7 +1,7 @@
 import express from 'express';
 import body from 'body-parser';
 import ControllerHome from './controllers/home.js';
-import MiddleAutentication from '../middleware/autentication.js';
+import MiddlewareAutentication from '../middleware/autentication.js';
 import router from './routes/router.js';
 
 const app = express();
@@ -11,7 +11,7 @@ export default class ServerHttp {
 
     constructor(){
         console.log('server rodando ...');
-        this.autentic = new MiddleAutentication();
+        this.autentic = new MiddlewareAutentication();
         this.home = new ControllerHome();
     }
 
@@ -27,7 +27,7 @@ export default class ServerHttp {
     createServer(){ 
         this.middleware();
         this.routers();        
-        app.listen(port, () => console.log(`rodando: http://localhost:${port}/api`));
+        app.listen(port, () => console.log(`rodando: http://localhost:${port}/api/v1`));
     }
 
 }

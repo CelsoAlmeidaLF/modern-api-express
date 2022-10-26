@@ -4,7 +4,8 @@ export default class CAS {
         this.base64 = authheader.split(' ')[1];   
     }
 
-    authCAS(data){
+    authCAS(){
+        let data = 'admin:admin';
         let buf = Buffer.from(data);
         let encodedData = buf.toString('base64');
         return encodedData;
