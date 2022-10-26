@@ -3,7 +3,7 @@ import {v4} from 'uuid';
 
 export default class ControllerHome {
     index(req, res, next){
-            //let bll = new Business();
+
             let date = `${format(new Date(), 'yyyy-MM-dd HH:mm:ss')}`;
 
             let api = {
