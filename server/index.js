@@ -1,24 +1,28 @@
 import express from 'express';
 import body from 'body-parser';
-import { ControllerHome } from './controllers/home.js';
+import ControllerHome from './controllers/home.js';
 
 const app = express();
 const port = process.env.port || 3000;
-const home = undefined;
+
 export class ServerHttp{
 
     constructor(){
         console.log('server rodando ...');
-        app.use(body.json());
-        home = new ControllerHome();
+        this.home = new ControllerHome();
     }
 
-    routers(url){
-        app.get(url, home.index(req, res));
+    middleware(){
+        app.use(body.json());
+    }
+
+    routers(){
+        app.get('/api/v1', this.home.index);
     }
 
     createServer(){ 
-        this.routers('/api');
+        this.middleware();
+        this.routers();        
         app.listen(port, () => console.log(`rodando: http://localhost:${port}/api`));
     }
 
