@@ -1,8 +1,8 @@
 
-import {ServerHttp} from '../server/index.js'
+import ServerHttp from '../server/index.js'
 let _server = undefined
 
-export class Application {
+export default class Application {
     constructor(){
         console.clear();
         _server = new ServerHttp();

@@ -1,5 +1,3 @@
-export class File {
-    constructor(){
-             
-    }
+export default class File {
+
 }

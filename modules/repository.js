@@ -1,5 +1,3 @@
-export class Repository {
-    constructor(){  
-           
-    }
+export default class Repository {
+
 }
